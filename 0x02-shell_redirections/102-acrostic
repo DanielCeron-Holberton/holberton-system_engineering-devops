@@ -1,2 +1,2 @@
 #!/bin/bash
-paste -s -d ''| cut -c 1 < new_file
+ cut -c 1 < | paste -s -d ''
