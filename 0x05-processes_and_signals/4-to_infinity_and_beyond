@@ -5,6 +5,6 @@ string="To infinity and beyond"
 
 while : 
 do
-	echo $string
+	echo "$string"
 	sleep 2
 done
