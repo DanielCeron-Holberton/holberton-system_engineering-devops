@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # stops 4-to_infinity_and_beyond process
-kill -s 4-to_infinity_and_beyond
+
+numerito1=$(pgrep bash | tail -3 | head -1)
+
+kill -9 "$numerito1"
