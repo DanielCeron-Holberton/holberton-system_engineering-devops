@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Resolves different names with different address
+
+string1="127.0.0.2     localhost"
+string2="8.8.8.8       facebook.com"
+
+cp /etc/hosts ~/hosts.new
+echo $string1 >> ~/hosts.new
+echo $string2 >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
