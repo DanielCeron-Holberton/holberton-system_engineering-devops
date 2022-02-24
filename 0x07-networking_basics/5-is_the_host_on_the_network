@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# print status of server
+ping $1
