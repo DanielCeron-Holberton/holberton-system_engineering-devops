@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 # print status of server
-ping $1
+
+length=${#@}
+IP_ADDRESS=$1
+if [[ "$length" -eq 0 ]]; then
+    echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+else
+    ping -c5 "$IP_ADDRESS"
+fi
