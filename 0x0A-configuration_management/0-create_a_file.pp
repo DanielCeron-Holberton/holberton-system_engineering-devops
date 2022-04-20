@@ -1,3 +1,4 @@
+# Create a new File
 file { 'school':
   path               =>  '/tmp/school',
   source_permissions =>  0744,
