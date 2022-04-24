@@ -1,0 +1,10 @@
+#/usr/bin/env bash
+# Script that installs Nginx
+
+if [ ! -x /usr/sbin/nginx ]; then
+	sudo apt -y update
+	sudo apt install -y --allow-downgrades nginx
+	sudo ufw allow 'Nginx HTTP'
+fi
+echo "Hello World!" | sudo tee /var/www/html/index.html
+sudo service nginx start
