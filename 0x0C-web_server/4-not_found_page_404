@@ -9,7 +9,7 @@ fi
 
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html;
 
-str_to_add="\n\terror_page 404\/custom_404.html;\n\tlocation = /custom_404.html{\n\t\troot /var/www/html;\n\t\tinternal;\n\t}";
+str_to_add="\n\terror_page 404\/custom_404.html;\n\tlocation = /custom_404.html{\n\t\troot /var/www/html/;\n\t\tinternal;\n\t}";
 
 str_to_find="server_name _;";
 
