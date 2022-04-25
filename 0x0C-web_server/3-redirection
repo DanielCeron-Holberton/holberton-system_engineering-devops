@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Scripts that configures a redirect for nginx
+
+
+if [ ! -x /usr/sbin/nginx ]; then
+	sudo apt -y update
+	sudo apt install -y --allow-downgrades nginx
+	sudo ufw allow 'Nginx HTTP'
+fi
+                                                                  
+str_to_add="\n\tlocation /redirect_me/{\n\t\trewrite ^\/redirect_me/$ http://www.google.com/ permanent;\n\t}";
+str_to_find="server_name _;";
+                                                                  
+sudo sed -i "/$str_to_find/a\\$str_to_add" /etc/nginx/sites-available/default
+sudo service nginx restart
+
