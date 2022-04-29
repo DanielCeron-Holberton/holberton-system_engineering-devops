@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Scripts that fix the server
-
-
 sudo sed -i "s/enabled/available/1" /etc/nginx/nginx.conf
 pkill -1 nginx
+
