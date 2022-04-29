@@ -8,7 +8,7 @@ sudo apt-get -y install haproxy
 sudo ufw allow 'haproxy'
 # fi
 
-HAPROXY_CFG="listen my_lb_cfg\n\tbind*:80\n\toption httpchk\n\tserver webserver1 35.229.20.253 check\n\tserver webserver2 34.207.145.16 check\n"
+HAPROXY_CFG="\nlisten my_lb_cfg\n\tbind*:80\n\toption httpchk\n\tserver webserver1 35.229.20.253 check\n\tserver webserver2 34.207.145.16 check\n"
 
 sudo echo ${HAPROXY_CFG} >> /etc/haproxy/haproxy.cfg;
 sudo echo "ENABLE=1" >> /etc/default/haproxy.cfg;
