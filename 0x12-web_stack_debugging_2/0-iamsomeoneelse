@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Script that uses another user for exec
+# a command or script
+
+if [ $# -lt 1 ]; then
+    echo "Not enough args"
+    exit
+fi
+
+su -c whoami "$1"
+
