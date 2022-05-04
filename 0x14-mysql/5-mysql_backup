@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Creates a backup of all db
+
+if [-z "$1"];then
+	echo "No arguments";
+	exit
+fi
+
+
+sudo mysqldump --user root --password "$1" -all-databases > backup.sql
+tar -zcvf "$(date '+%d-%m-%Y').tar.gz" backup.sql
+
