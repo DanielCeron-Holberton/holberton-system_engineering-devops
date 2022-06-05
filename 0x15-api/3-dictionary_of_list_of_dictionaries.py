@@ -11,9 +11,9 @@ if __name__ == '__main__':
 
     def request_function(id):
 
-        url_user = 'https://jsonplaceholder.typicode.com/users/{}'.format(id)
-        url_todos = 'https://jsonplaceholder.typicode.com/todos?userId={}'.format(
-            id)
+        basic_url = 'https://jsonplaceholder.typicode.com'
+        url_user = '{}/users/{}'.format(basic_url, id)
+        url_todos = '{}/todos?userId={}'.format(basic_url, id)
 
         response_user = requests.get(url_user).json()
 
@@ -24,7 +24,8 @@ if __name__ == '__main__':
             for task in response_tasks:
                 task_list.append(
                     {'completed': task['completed'],
-                     'username': response_user['username'], 'task': task['title']})
+                     'username': response_user['username'],
+                     'task': task['title']})
                 to_json = {id: task_list}
             return to_json
         return None
