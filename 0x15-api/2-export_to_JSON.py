@@ -19,6 +19,7 @@ if __name__ == '__main__':
         task_list = []
         for task in response_tasks:
             task_list.append(
-                {'completed': task['completed'], 'username': response_user['username'], 'task': task['title']})
+                {'completed': task['completed'],
+                 'username': response_user['username'], 'task': task['title']})
         to_json = {argv[1]: task_list}
         json.dump(to_json, f)
