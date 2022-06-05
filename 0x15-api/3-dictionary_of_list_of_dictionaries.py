@@ -29,11 +29,11 @@ if __name__ == '__main__':
             return to_json
         return None
     id = 1
-    list_dict = []
+    dict_json = {}
     to_json = request_function(id)
     while(to_json):
-        list_dict.append(to_json)
+        dict_json.update(to_json)
         id += 1
         to_json = request_function(id)
     with open("todo_all_employees.json", "w") as f:
-        json.dump(list_dict, f)
+        json.dump(dict_json, f)
